@@ -1,0 +1,52 @@
+name: MystiaUtils
+depend: [Vault]
+softdepend: [mcMMO, CraftIRC]
+main: net.mystia.MystiaUtils.MystiaUtilsMain
+version: 1.5
+description: Various utilities for Mystia Minecraft Server 
+author: ron975
+commands:
+   readrules:
+      description: Get a stone kit after you've read the rules.
+      usage: /<command>
+   censor:
+      description: Toggles censor on or off
+      usage: /<command>
+   freeze:
+      description: Toggles freezing a player
+      usage: /<command> player
+   stophit:
+      description: Toggles freezing a player
+      usage: /<command> player
+   blockcmd:
+      description: Toggles freezing a player
+      usage: /<command> player
+   blockinfo:
+      description: Tells information about the block you're holding
+      usage: /<command> 
+   list:
+      description: Lists online players
+      usage: /<command> 
+   unlockfly:
+      description: Unlock fly privilages with a Gold Block
+      usage: /<command> 
+permissions:
+   mystia.censor:
+      description: Censors for that player
+      default: false
+   mystia.admin:
+      description: MystiaUtils Admin Tools
+      default: op
+      children:
+        mystia.freeze: true
+        mystia.blockcmd: true
+        mystia.stophit: true
+   mystia.freeze:
+      description: Allows a player to freeze a player
+      default: op
+   mystia.blockcmd:
+      description: Blocks commands for that player
+      default: op
+   mystia.stophit:
+      description: Stop a player from hitting
+      default: op
