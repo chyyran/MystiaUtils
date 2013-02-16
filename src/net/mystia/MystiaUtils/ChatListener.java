@@ -45,8 +45,9 @@ public class ChatListener implements Listener
 
 		e.setCancelled(true);
 		e.setFormat(ChatColor.RESET+"[" + ChatColor.DARK_AQUA + "Craft" + ChatColor.RESET + "] " + e.getPlayer().getDisplayName() + ChatColor.RESET + ": ");
-		String censorMessage = e.getMessage();
 		String origMessage = e.getMessage();
+		
+		String censorMessage = origMessage;
 		String permission = "mystia.censor";
 
 		censorMessage = censorMessage.replaceAll("(?i)dick", "male sexual organ");
@@ -81,7 +82,7 @@ public class ChatListener implements Listener
 				AsyncPlayerChatEvent monitorOnlyEvent = new AsyncPlayerChatEvent(false, p, ChatColor.translateAlternateColorCodes('&',origMessage), new HashSet<Player>(Arrays.asList(Bukkit
 					.getOnlinePlayers())));
 
-				monitorOnlyEvent.setFormat(e.getFormat() + ChatColor.translateAlternateColorCodes('&',origMessage));
+				monitorOnlyEvent.setFormat(e.getFormat() + ChatColor.translateAlternateColorCodes('&',origMessage.replace("%", "%%")));
 				callEventAtMonitorOnly(monitorOnlyEvent);
 				Bukkit.getConsoleSender().sendMessage(
 					String.format(monitorOnlyEvent.getFormat(), monitorOnlyEvent.getPlayer().getDisplayName(), monitorOnlyEvent.getMessage()));

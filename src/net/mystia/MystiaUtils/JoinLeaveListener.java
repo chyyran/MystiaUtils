@@ -23,7 +23,7 @@ public class JoinLeaveListener implements Listener
 
 		}
 		event.setJoinMessage(null);
-		MystiaUtilsMain.plugin.getServer().getScheduler().scheduleAsyncDelayedTask(MystiaUtilsMain.plugin, new JoinMessageRunnable(MystiaUtilsMain.plugin, event), 1);
+		MystiaUtilsMain.plugin.getServer().getScheduler().scheduleAsyncDelayedTask(MystiaUtilsMain.plugin, new JoinMessageRunnable(MystiaUtilsMain.plugin, event), 5);
 
 	}
 

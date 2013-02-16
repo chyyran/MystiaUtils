@@ -21,11 +21,7 @@ public class CommandListener implements Listener
 						e.setCancelled(true);
 					}
 				}
-				
 
-			
-
-		
 	
 
 	@EventHandler
